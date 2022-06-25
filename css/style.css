@@ -1,0 +1,395 @@
+@font-face {
+  font-family: "Montserrat-SemiBold";
+  src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2"), url("../fonts/Montserrat-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat-Medium";
+  src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat-Extrabold";
+  src: url("../fonts/Montserrat-ExtraBold.woff2") format("woff2"), url("../fonts/Montserrat-ExtraBold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+/* RESET CSS */
+/* http://meyerweb.com/eric/tools/css/reset/
+     v2.0 | 20110126
+     License: none (public domain)
+  */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  color: inherit;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+a, a:hover, a:active, a:visited, a:focus {
+  color: inherit;
+}
+
+i,
+em,
+.italic-text {
+  font-style: italic;
+}
+
+b,
+strong,
+th,
+.bold-text {
+  font-weight: bold;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.wrap-clear::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1;
+  display: table;
+  clear: both;
+}
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+
+:focus {
+  outline: none;
+}
+
+input,
+button,
+textarea {
+  border-radius: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+select {
+  border-radius: 0;
+}
+
+textarea {
+  resize: none;
+}
+
+@media screen and (max-width: 767px) {
+  .hidden-xs {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  .hidden-lg {
+    display: none;
+  }
+}
+
+.grid-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1113px;
+}
+@media screen and (max-width: 767px) {
+  .grid-container {
+    max-width: 90%;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .grid-container {
+    max-width: 80%;
+  }
+}
+
+.navbar {
+  background-color: red;
+}
+.navbar__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.navbar__logo {
+  padding-top: 45px;
+  padding-bottom: 18px;
+}
+.navbar__img {
+  max-width: 100%;
+  height: auto;
+  width: 227px;
+}
+
+@media screen and (max-width: 767px) {
+  .navbar {
+    background-color: red;
+  }
+  .navbar__logo {
+    padding-top: 19px;
+    padding-bottom: 19px;
+  }
+  .navbar__img {
+    width: 98px;
+  }
+}
+.banner {
+  padding-top: 117px;
+  padding-bottom: 159px;
+  background-image: url("../images/2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.banner__base {
+  background-color: black;
+}
+.banner__copy {
+  position: relative;
+  color: red;
+  font-size: 42px;
+  text-transform: uppercase;
+  font-weight: 900;
+  padding-top: 28px;
+  padding-bottom: 28px;
+  font-family: "Montserrat-Extrabold";
+  letter-spacing: 2px;
+  line-height: 1.1;
+}
+.banner__img {
+  position: absolute;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  width: 560px;
+  top: -45%;
+  right: 0%;
+}
+.banner__btn {
+  margin-top: 40px;
+  display: inline-block;
+  background-color: black;
+  color: white !important;
+  font-family: "Montserrat-Medium";
+  font-size: 22px;
+  padding: 16px 28px;
+  border-radius: 5px;
+}
+.banner__cta {
+  position: relative;
+}
+.banner__dots {
+  position: fixed;
+}
+.banner__dots .slick-dots {
+  position: unset;
+}
+
+@media screen and (max-width: 767px) {
+  .banner {
+    padding-top: 50px;
+    padding-bottom: 117px;
+  }
+  .banner__copy {
+    padding: 5px 0;
+    font-size: 13px;
+  }
+  .banner__img {
+    width: 160px;
+    top: -45%;
+    right: 0%;
+  }
+  .banner__btn {
+    padding: 8px 16px;
+    margin-top: 20px;
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .banner {
+    padding-top: 70px;
+    padding-bottom: 170px;
+  }
+  .banner__base {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .banner__copy {
+    font-size: 25px;
+  }
+  .banner__img {
+    width: 300px;
+    top: -35%;
+  }
+}

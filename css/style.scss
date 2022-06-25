@@ -1,0 +1,483 @@
+@font-face {
+  font-family: "Montserrat-SemiBold";
+  src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2"),
+    url("../fonts/Montserrat-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat-Medium";
+  src: url("../fonts/Montserrat-Medium.woff2") format("woff2"),
+    url("../fonts/Montserrat-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url("../fonts/Montserrat-Regular.woff2") format("woff2"),
+    url("../fonts/Montserrat-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat-Extrabold";
+  src: url("../fonts/Montserrat-ExtraBold.woff2") format("woff2"),
+    url("../fonts/Montserrat-ExtraBold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"),
+    url("../fonts/Montserrat-Bold.woff") format("woff");
+
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+$medium: "Montserrat-Medium";
+$regular: "Montserrat-Regular";
+$extrabold: "Montserrat-Extrabold";
+$bold: "Montserrat-Bold";
+$semiBold: "Montserrat-SemiBold";
+
+$media-mobile-max: 767 !default;
+$media-tablet-min: 768px !default;
+$media-tablet-max: 1024px !default;
+$media-desktop-min: 1025px !default;
+@mixin mq($size) {
+  @if $size==mobile {
+    @media screen and (max-width: 767px) {
+      @content;
+    }
+  } @else if $size==tablet {
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+      @content;
+    }
+  } @else if $size==desktop {
+    @media (min-width: 1025px) {
+      @content;
+    }
+  }
+}
+
+// @mixin mobile {
+//   @media screen and (max-width: 767px) {
+//     @content;
+//   }
+// }
+// @mixin tablet {
+//   @media screen and (min-width: 768px) and (max-width: 1024px) {
+//     @content;
+//   }
+// }
+// @mixin desktop {
+//   @media (min-width: 1025px) {
+//     @content;
+//   }
+// }
+
+//
+
+@mixin flexbox {
+  display: -webkit-box; // old
+  display: -moz-box; // old
+  display: -ms-flexbox; // ie
+  display: -webkit-flex; // new
+  display: flex; // new
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+@mixin input-placeholder {
+  &.placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+  &::-webkit-input-placeholder {
+    @content;
+  }
+}
+
+/* RESET CSS */
+
+/* http://meyerweb.com/eric/tools/css/reset/
+     v2.0 | 20110126
+     License: none (public domain)
+  */
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  color: inherit;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  &,
+  &:hover,
+  &:active,
+  &:visited,
+  &:focus {
+    color: inherit;
+  }
+
+  text-decoration: none;
+}
+
+i,
+em,
+.italic-text {
+  font-style: italic;
+}
+b,
+strong,
+th,
+.bold-text {
+  font-weight: bold;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+
+.wrap-clear::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.clearfix {
+  zoom: 1;
+  display: table;
+  clear: both;
+
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+:focus {
+  outline: none;
+}
+
+input,
+button,
+textarea {
+  border-radius: 0;
+  appearance: none;
+}
+
+select {
+  border-radius: 0;
+}
+
+textarea {
+  resize: none;
+}
+//
+.hidden-xs {
+  @include mq(mobile) {
+    display: none !important;
+  }
+}
+.hidden-lg {
+  @include mq(desktop) {
+    display: none;
+  }
+}
+//
+.grid-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1113px;
+  @include mq(mobile) {
+    max-width: 90%;
+  }
+  @include mq(tablet) {
+    max-width: 80%;
+  }
+}
+//
+.navbar {
+  background-color: red;
+  &__header {
+    display: flex;
+    justify-content: center;
+  }
+  &__logo {
+    padding-top: 45px;
+    padding-bottom: 18px;
+  }
+  &__img {
+    max-width: 100%;
+    height: auto;
+    width: 227px;
+  }
+}
+//
+@include mq(mobile) {
+  .navbar {
+    background-color: red;
+    &__header {
+    }
+    &__logo {
+      padding-top: 19px;
+      padding-bottom: 19px;
+    }
+    &__img {
+      width: 98px;
+    }
+  }
+}
+.banner {
+  padding-top: 117px;
+  padding-bottom: 159px;
+  background-image: url("../images/2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &__base {
+    background-color: black;
+  }
+  &__copy {
+    // margin-top: 117px;
+    position: relative;
+    color: red;
+    font-size: 42px;
+    text-transform: uppercase;
+    font-weight: 900;
+    padding-top: 28px;
+    padding-bottom: 28px;
+    font-family: $extrabold;
+    letter-spacing: 2px;
+    line-height: 1.1;
+  }
+  &__img {
+    position: absolute;
+    display: block;
+    max-width: 100%;
+    height: auto;
+    width: 560px;
+    top: -45%;
+    right: 0%;
+  }
+  &__btn {
+    margin-top: 40px;
+    display: inline-block;
+    background-color: black;
+    color: white !important;
+    font-family: $medium;
+    font-size: 22px;
+    padding: 16px 28px;
+    border-radius: 5px;
+  }
+  &__cta {
+    position: relative;
+  }
+  &__dots {
+    position: fixed;
+    .slick-dots {
+      position: unset;
+    }
+  }
+}
+
+@include mq(mobile) {
+  .banner {
+    padding-top: 50px;
+    padding-bottom: 117px;
+    &__base {
+      // padding-left: 5px;
+      // padding-right: 5px;
+    }
+    &__copy {
+      padding: 5px 0;
+      font-size: 13px;
+    }
+    &__img {
+      width: 160px;
+      top: -45%;
+      right: 0%;
+    }
+    &__btn {
+      padding: 8px 16px;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+  }
+}
+@include mq(tablet) {
+  .banner {
+    padding-top: 70px;
+    padding-bottom: 170px;
+    &__base {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    &__copy {
+      font-size: 25px;
+    }
+    &__img {
+      width: 300px;
+      top: -35%;
+      // right: 0%;
+    }
+  }
+}
+
+.twest{
+  color: red;
+}
